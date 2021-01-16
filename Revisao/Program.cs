@@ -36,6 +36,7 @@ namespace Revisao
                     case "2":
                         foreach (var a in alunos)
                         {
+    
                             if (!string.IsNullOrEmpty(a.Nome))
                             {
                                 Console.WriteLine($"ALUNO: {a.Nome} - NOTA: {a.Nota}");
