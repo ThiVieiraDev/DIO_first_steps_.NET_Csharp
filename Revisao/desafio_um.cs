@@ -6,27 +6,29 @@ namespace desafioUm
     {
         static void Main(string[] args)
         {
-            float consumoCarro = 12;
-            float tempoViagem = 0;
-            float velocidadeMedia = 0;
+            // Informação já revelado no exercicio
+            int consumoCarro = 12;
 
-            float resultado = 0;
-
+            // Recebendo o primeiro dado 'tempo gasto na viagem em horas'
             Console.WriteLine("Digite o tempo gasto na viagem em HORAS: ");
-            string tempoViagemSTRING = Console.ReadLine();
+            // Convertendo de string para int
+            int tempoViagem = Convert.ToInt32(Console.ReadLine());
+
+            // Recebendo o primeiro dado 'velocidade média da viagem em KM/h'
             Console.WriteLine("Digite a velocidade média durante a viagem em KM/h: ");
-            string velocidadeMediaSTRING = Console.ReadLine();
-            
-            Console.WriteLine($"Tempo da Viagem em horas: {tempoViagemSTRING} Velocidade Média em KM/h: {velocidadeMediaSTRING}");
+            // Convertendo de string para int
+            int velocidadeMedia = Convert.ToInt32(Console.ReadLine());
 
-            tempoViagem = float.Parse(tempoViagemSTRING);
-            velocidadeMedia = float.Parse(velocidadeMediaSTRING);
+            // Chamando método para realizar calculo e exibir resultado
+            CalculaGasto(tempoViagem, velocidadeMedia, consumoCarro);
+        }
 
-            resultado = (tempoViagem * velocidadeMedia) / consumoCarro;
-            Console.WriteLine($"Tempo x VelocidadeM. {resultado}");
-
-            // resultado = (tempoViagemSTRING * velocidadeMediaSTRING)
-
+        private static void CalculaGasto(int tempoViagem, int velocidadeMedia, int consumoCarro)
+        {
+            int teste = tempoViagem * velocidadeMedia;
+            decimal resultado = teste / (decimal)consumoCarro;
+            decimal testeDois = Math.Round(resultado, 3);
+            Console.WriteLine(testeDois.ToString());
         }
     }
 }
