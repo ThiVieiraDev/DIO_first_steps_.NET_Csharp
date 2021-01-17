@@ -1,25 +1,17 @@
 using System;
-
-namespace desafioUm
-{
-    class Program
+class Program
     {
         static void Main(string[] args)
         {
-            // Variáveis utilizadas para entrada de dados
+            // Variável com dado já informado
             int consumoCarro = 12;
-
-            // Recebendo o primeiro dado 'tempo gasto na viagem em horas'
-            Console.WriteLine("Digite o tempo gasto na viagem e a velocidade média");
-            var resposta = Console.ReadLine().Split(" ");
+            
+            // Recebendo os dados
+            var dados = Console.ReadLine().Split(" ");
 
             // Convertendo de string para int
-            int tempoViagem = int.Parse(resposta[0]);
-            int velocidadeMedia = int.Parse(resposta[1]);
-
-            // Recebendo o primeiro dado 'velocidade média da viagem em KM/h'
-            // Console.WriteLine("Digite a velocidade média durante a viagem em KM/h: ");
-            // Convertendo de string para int
+            int tempoViagem = int.Parse(dados[0]);
+            int velocidadeMedia = int.Parse(dados[1]);
 
             // Chamando método para realizar calculo e exibir resultado
             CalculaGasto(tempoViagem, velocidadeMedia, consumoCarro);
@@ -33,4 +25,3 @@ namespace desafioUm
             Console.WriteLine(resultadoFinal.ToString());
         }
     }
-}
